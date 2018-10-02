@@ -41,8 +41,10 @@ So here goes my notes:
 - in a casino, the epsilon greedy algo works like so:
     - we sample each bandit, and with time decrease epsilon. as we gather data we build a reward distribution for each slot machine.
     - we find the distribution with the highest return, and we're done!
-- notebook: solve a multi-armed bandit problem using the epsilon greedy algo using OpenAI Gym
+- solve a multi-armed bandit problem using the epsilon greedy algo using OpenAI Gym
+    - multiarmed_bandits.ipynb
 
+![](images/bandits_epsilon.png)
 
 ---
 
