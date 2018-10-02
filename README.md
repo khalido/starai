@@ -10,6 +10,7 @@ This is a [7 week course](https://sites.google.com/view/starai-course-beta/lesso
 So here goes my notes:
 - [Introduction to Reinforcement Learning](#introduction-to-reinforcement-learning)
 - [The Epsilon Greedy Algorithm](#the-epsilon-greedy-algorithm)
+- [Markov Decision Processes, Dynamic Programming](#markov-decision-processes-dynamic-programming)
 - [holding area, fix up with real notes when I get to it](#holding-area-fix-up-with-real-notes-when-i-get-to-it)
 
 ## Introduction to Reinforcement Learning
@@ -41,18 +42,22 @@ So here goes my notes:
 - in a casino, the epsilon greedy algo works like so:
     - we sample each bandit, and with time decrease epsilon. as we gather data we build a reward distribution for each slot machine.
     - we find the distribution with the highest return, and we're done!
-- solve a multi-armed bandit problem using the epsilon greedy algo using OpenAI Gym
-    - multiarmed_bandits.ipynb
+- [notebook implementing the multi-armed bandit problem using the epsilon greedy algo using OpenAI Gym]((https://github.com/khalido/starai/blob/master/notebooks/multiarmed_bandits.ipynb))
 
 ![](images/bandits_epsilon.png)
+
+## Markov Decision Processes, Dynamic Programming
+
+> In this lecture you will learn the fundamentals of Reinforcement Learning. We start off by discussing the Markov environment and its properties, gradually building our understanding of the intuition behind the Markov Decision Process and its elements, like state-value function, action-value function and policies. We then move on to discussing Bellman equations and the intuition behind them.  At the end we will explore one of the Bellman equation implementations, using the Dynamic Programming approach and finish with an exercise, where you will implement state-value and action-value functions algorithms and find  an optimal policy to solve the Gridworld problem.
+
+- markov processs is a memoryless random process, a sequence of states with Markov Property
+- State has all necessary info from the previous states, so no need to keep any history
+- Markov Chain: s
 
 ---
 
 ## holding area, fix up with real notes when I get to it
 
-Week 2 - Lesson 2a -  Markov Decision Processes, Dynamic Programming
-
-In this lecture you will learn the fundamentals of Reinforcement Learning. We start off by discussing the Markov environment and its properties, gradually building our understanding of the intuition behind the Markov Decision Process and its elements, like state-value function, action-value function and policies. We then move on to discussing Bellman equations and the intuition behind them.  At the end we will explore one of the Bellman equation implementations, using the Dynamic Programming approach and finish with an exercise, where you will implement state-value and action-value functions algorithms and find  an optimal policy to solve the Gridworld problem.
 
 Week 2 - Lesson 2b -  Monto Carlo Sampling, Temporal Difference Learning
 
