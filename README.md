@@ -50,9 +50,15 @@ So here goes my notes:
 
 > In this lecture you will learn the fundamentals of Reinforcement Learning. We start off by discussing the Markov environment and its properties, gradually building our understanding of the intuition behind the Markov Decision Process and its elements, like state-value function, action-value function and policies. We then move on to discussing Bellman equations and the intuition behind them.  At the end we will explore one of the Bellman equation implementations, using the Dynamic Programming approach and finish with an exercise, where you will implement state-value and action-value functions algorithms and find  an optimal policy to solve the Gridworld problem.
 
+- markov property: the future only depends on the current state, not the history
 - markov processs is a memoryless random process, a sequence of states with Markov Property
 - State has all necessary info from the previous states, so no need to keep any history
-- Markov Chain: s
+- Markov Chains
+- Bellman Equations decompose the value function into the immediate reward plus the discounted future values.
+- dynamic programming: solve a complex problem by breaking it down into simpler subproblems.
+    - applies to MDP
+- code a simple gridworld with state value function
+- 
 
 ---
 
