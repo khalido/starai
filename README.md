@@ -11,12 +11,16 @@ So here goes my notes:
 - [Introduction to Reinforcement Learning](#introduction-to-reinforcement-learning)
 - [The Epsilon Greedy Algorithm](#the-epsilon-greedy-algorithm)
 - [Markov Decision Processes, Dynamic Programming](#markov-decision-processes-dynamic-programming)
+    - [todo](#todo)
+- [Monto Carlo Sampling, Temporal Difference Learning](#monto-carlo-sampling-temporal-difference-learning)
+    - [todo](#todo)
 - [holding area, fix up with real notes when I get to it](#holding-area-fix-up-with-real-notes-when-i-get-to-it)
 
 ## Introduction to Reinforcement Learning
 
 > In this lecture, we will take you on a journey into the near future by discussing the recent developments in the  field of Reinforcement Learning - by introducing you to what Reinforcement Learning is, how it differs from Deep Learning and the future impact of RL technology.
 
+- the rl problem: Agent -> Action -> Environment -> State, Reward -> Agent
 - Deep Minds paper - [Human level control through deep reinforcement level](https://deepmind.com/research/publications/human-level-control-through-deep-reinforcement-learning/) - rocked the world, nature put it on their cover, first step towards Artificial General Intelligence - the holy grail of AI.
 - before this paper, ppl wrote specific algos to do stuff, which needed tons of domain expertise, like IBM's Deep Blue, and it could only do the one thing.
 - RL can be thrown at different problems and it can adapt and sovle them without needing domain expertise.
@@ -53,21 +57,45 @@ So here goes my notes:
 - markov property: the future only depends on the current state, not the history
 - markov processs is a memoryless random process, a sequence of states with Markov Property
 - State has all necessary info from the previous states, so no need to keep any history
+    - we understand everything about the environment
+    - in reality we don't know everything, or there are environmental changes like the floor has become slippery
+    - mdp provides a framework in which to work
 - Markov Chains
 - Bellman Equations decompose the value function into the immediate reward plus the discounted future values.
 - dynamic programming: solve a complex problem by breaking it down into simpler subproblems.
     - applies to MDP
+
+### todo
+
 - code a simple gridworld with state value function
+- add pic of mdp
+- add notes from Sutton RL book 
+
+
+## Monto Carlo Sampling, Temporal Difference Learning
+
+In this short session, you will be introduced to the concepts of Monte-Carlo and Temporal Difference sampling. You will start off discussing the limitations of classic MDP and how they can be solved using MC and TD. In the second part of the lecture, you will learn the difference between MC and TD and when to apply each technique. This knowledge learned in this session will then be applied in next lecture's practical exercise.
+
+- tabular q learning
+    - q values are inherently estimates (unless we have a perfect view of the world)
+- temporal difference learning: you don't wait for a long time before you start learning
+    - update the value of our actions from past experience
+- there are no action values associated with terminal states
+- discount values: high if we care about far into the future actions, low if we don't
+    - a higher discount val like 0.9 will propagate futher out, leading our agent towards a reward
+    - low discount vals means the reward signal dies out quicker, 
 - 
+
+### todo
+
+- make a notebook to solve the simple problem presented in wk3. use q-learning
+
 
 ---
 
 ## holding area, fix up with real notes when I get to it
 
-
-Week 2 - Lesson 2b -  Monto Carlo Sampling, Temporal Difference Learning
-
-In this short session, you will be introduced to the concepts of Monte-Carlo and Temporal Difference sampling. You will start off discussing the limitations of classic MDP and how they can be solved using MC and TD. In the second part of the lecture, you will learn the difference between MC and TD and when to apply each technique. This knowledge learned in this session will then be applied in next lecture's practical exercise.
+ 
 
 Week 3 - Lesson 3a -  Tabular Q Gridworld
 
