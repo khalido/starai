@@ -14,6 +14,8 @@ So here goes my notes:
     - [todo](#todo)
 - [Monto Carlo Sampling, Temporal Difference Learning](#monto-carlo-sampling-temporal-difference-learning)
     - [todo](#todo)
+- [Tabular Q Gridworld](#tabular-q-gridworld)
+- [Tabular Q Cartpole](#tabular-q-cartpole)
 - [holding area, fix up with real notes when I get to it](#holding-area-fix-up-with-real-notes-when-i-get-to-it)
 
 ## Introduction to Reinforcement Learning
@@ -90,20 +92,25 @@ In this short session, you will be introduced to the concepts of Monte-Carlo and
 
 - make a notebook to solve the simple problem presented in wk3. use q-learning
 
+##  Tabular Q Gridworld
 
+> In this session, participants will focus on a specific method of Temporal Difference Learning called Tabular Q Learning. Participants will learn the theory behind Q Learning, implement the different components bit by bit and combine these components to solve the robot in a maze scenario. 
+
+- Solved
+
+## Tabular Q Cartpole
+
+> In this session, participants will explore the problem of an environment where observations are continuous variables. Participants will learn the discretisation technique and implement this with the previous components to solve the problem of keeping a cart pole upright without having any understanding of the observations. 
+
+- Solved
+- 
 ---
 
 ## holding area, fix up with real notes when I get to it
 
  
 
-Week 3 - Lesson 3a -  Tabular Q Gridworld
 
-In this session, participants will focus on a specific method of Temporal Difference Learning called Tabular Q Learning. Participants will learn the theory behind Q Learning, implement the different components bit by bit and combine these components to solve the robot in a maze scenario. 
-
-Week 3- Lesson 3b -  Tabular Q Cartpole
-
-In this session, participants will explore the problem of an environment where observations are continuous variables. Participants will learn the discretisation technique and implement this with the previous components to solve the problem of keeping a cart pole upright without having any understanding of the observations. 
 
 Week 4 - Lesson 4a -  NQL Theory
 
