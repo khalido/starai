@@ -16,6 +16,8 @@ So here goes my notes:
     - [todo](#todo)
 - [Tabular Q Gridworld](#tabular-q-gridworld)
 - [Tabular Q Cartpole](#tabular-q-cartpole)
+- [Neural Q-Learning Theory](#neural-q-learning-theory)
+- [DQN](#dqn)
 - [holding area, fix up with real notes when I get to it](#holding-area-fix-up-with-real-notes-when-i-get-to-it)
 
 ## Introduction to Reinforcement Learning
@@ -96,29 +98,66 @@ In this short session, you will be introduced to the concepts of Monte-Carlo and
 
 > In this session, participants will focus on a specific method of Temporal Difference Learning called Tabular Q Learning. Participants will learn the theory behind Q Learning, implement the different components bit by bit and combine these components to solve the robot in a maze scenario. 
 
-- Solved
+- [Frozenlake solution jupyter notebook](https://github.com/khalido/starai/blob/master/notebooks/frozenlakev2.ipynb)
 
 ## Tabular Q Cartpole
 
 > In this session, participants will explore the problem of an environment where observations are continuous variables. Participants will learn the discretisation technique and implement this with the previous components to solve the problem of keeping a cart pole upright without having any understanding of the observations. 
 
-- Solved
+- [Cartpole solution jupyter notebook](https://github.com/khalido/starai/blob/master/notebooks/cartpole.ipynb)
 - 
+
+## Neural Q-Learning Theory
+
+> Neural Q-Learning builds on the theory developed in previous sessions, augmenting the tabular Q-Learning algorithm with the powerful function approximation capabilities of Neural Networks. NQL is the "base" algorithm unifying Neural Networks and Reinforcement Learning, and participants will be exposed to both the impressive generalization properties of this algorithm, as well as some of it's potential drawbacks and limitations. 
+
+- deep learning bubble is blowing up, but RL is still hot
+- RL is a very active and developing field.
+- think of neural nets as universal function approximaters, should be able to approximate any high dimenensial function
+- think of neural nets as being able to fit any N dimensional surface
+- Problems with tabular Aproach:
+    - q-tables increases exponentially with action resolution and run out of memory
+    - can't generalize similar states, so if we get a new similar state, the q-table can't deal with it
+- neural networks can map similar states to other states
+- why NN? why not KNN or interpolation? Been done with Neural Episodic Control.
+- a q surace for any real environment is very complex, so its simpler to represent that surface with a neural net
+- cartpole is controllable with two controls (left, right) so this is a linear control problem which only needs a 1 layer NN. The complexity of the NN depends on the complexity of the problem.
+- intuition in 2d doesn't extend to higher dimensions - for example increasing dimensions first increases volume then it shrinks. 
+    - hand wavy explanation: as you increase dimensions, the shape collapses along the axis
+- NN are universal function approximators in theory but in practice we're constrained by memory, compute and simulation accuracy/data.
+    - ppl are exploring things like starcraft to see how complex an environment RL can learn given todays compute
+- tip: Use the simplest possible network which fits the environment we're trying to control
+- Why NN? We can use any function approximator. NN's just happen to be easy and good at the moment. Some work uses tools like decision trees.
+- NQL is just the use of a neural network to approximate the Q function. Been done since the 90's.
+- DQN is ambigious, usually refers to the Minh 2015 algoriithim paper. Uses ConvNet and tricks to make the NN stable.
+- gradient descent / hill climbing almost always walks with high dimensial problems. High D means theres always a way to move in the direction we want to go to to acheive lower loss.
+- with each env step, we take one optimization step - only one optimization step as the q values we get from the network are initially random, so we don't want to optimize too early.
+- RL NNs are often brittle
+
+
+## DQN
+
+> Deep Q-Networks refer to the method proposed by Deepmind in 2014 to learn to play ATARI2600 games from the raw pixel observations. This hugely influential method kick-started the resurgence in interest in Deep Reinforcement Learning, however it's core contributions deal simply with the stabilization of the NQL algorithm. In these session these key innovations (Experience Replay, Target Networks, and Huber Loss) are stepped though, taking the participants from the relatively unstable NQL algorithm to a fully-implemented DQN.  
+
+- dqn is the base network for RL now
+- uses ConvNets, so have to batch, which helps RL
+- Replay helps lower variance:
+    - we're correlating the experieces which we're batching, so we randomly sample from the replay buffer instead of just using the most recent states sampled 
+- target networks: only update the network every N steps, prevents us from moving into a bad area
+- huber loss: `tf.losses.huber_loss()` - its not differentiable.
+- important to design the reward function properly so it doesn't mess up our q values
+
+
+
+- two main things they did to allow ConvNets to train
+    - ? ?
+
 ---
 
 ## holding area, fix up with real notes when I get to it
 
  
 
-
-
-Week 4 - Lesson 4a -  NQL Theory
-
-Neural Q-Learning builds on the theory developed in previous sessions, augmenting the tabular Q-Learning algorithm with the powerful function approximation capabilities of Neural Networks. NQL is the "base" algorithm unifying Neural Networks and Reinforcement Learning, and participants will be exposed to both the impressive generalization properties of this algorithm, as well as some of it's potential drawbacks and limitations. 
-
-Week 4 - Lesson 4b -  DQN
-
-Deep Q-Networks refer to the method proposed by Deepmind in 2014 to learn to play ATARI2600 games from the raw pixel observations. This hugely influential method kick-started the resurgence in interest in Deep Reinforcement Learning, however it's core contributions deal simply with the stabilization of the NQL algorithm. In these session these key innovations (Experience Replay, Target Networks, and Huber Loss) are stepped though, taking the participants from the relatively unstable NQL algorithm to a fully-implemented DQN.  
 
 Week 5 - Lesson 5 - Policy Gradient Methods
 
