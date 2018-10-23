@@ -18,6 +18,7 @@ So here goes my notes:
 - [Tabular Q Cartpole](#tabular-q-cartpole)
 - [Neural Q-Learning Theory](#neural-q-learning-theory)
 - [DQN](#dqn)
+- [Policy Gradient Methods](#policy-gradient-methods)
 - [holding area, fix up with real notes when I get to it](#holding-area-fix-up-with-real-notes-when-i-get-to-it)
 
 ## Introduction to Reinforcement Learning
@@ -152,6 +153,41 @@ In this short session, you will be introduced to the concepts of Monte-Carlo and
 - two main things they did to allow ConvNets to train
     - ? ?
 
+
+## Policy Gradient Methods
+
+> In previous lectures, you were introduced to DQN - an algorithm that falls under the first major branch of Reinforcement Learning, "Value Based Methods". In this lecture, we introduce you to "Policy Gradient methods" the second major branch of Reinforcement Learning where we learn to manipulate the object we care about the most - the policy - directly.
+
+[] make a policy gradient notebook solving cartpole and a couple other openai envs
+[] fix notes
+
+- policy gradients in a nutshell: do stuff (under current policy), learn which stuff led to good outcomes, do more of that
+- a policy is any underlying mathematical function that maps your current state to your next action
+- [Edge of Tomorrow](https://www.imdb.com/title/tt1631867/) is a great explanation of policy gradients
+- policy gradients are fundamentally different to value based approaches
+- why policy gradients vs other methods?
+    - they can deal with high dimensions
+    - they can learn a stochastic policy, which value functions can't
+- On policy vs off policy
+    - off-policy: q learning, collecting data, learning from it
+    - on policy: learn from trial and error
+- Parameterization allows us to adjust our policy function
+- function approximation: we need some way of representing what action to take, given our current state
+    - neural nets are the most powerful function approximators we have
+- distributions: we need a way to represent the actions available to us in an environment
+    - often use the Bernoulli distribution - its discrete, gives us a % change of getting a return from the buckets in our set
+    - so we are using parametrized function approximation of a bernoulli distribution
+- Monte Carlo Sampling: we need some way of estimating our performance in an environment
+    - allows us to collect a whole batch of episodes
+    - episodes allows us to compare performance of one vs the other and make the good ones more probable
+- 
+
+Resources:
+
+- [RL Course by David Silver - Lecture 7: Policy Gradient Methods](https://youtu.be/KHZVXao4qXs)
+- [Pytorch cartpole using policy](https://medium.com/@ts1829/policy-gradient-reinforcement-learning-in-pytorch-df1383ea0baf)
+- [Tensforflow example](https://medium.com/tensorflow/deep-reinforcement-learning-playing-cartpole-through-asynchronous-advantage-actor-critic-a3c-7eab2eea5296)
+
 ---
 
 ## holding area, fix up with real notes when I get to it
@@ -159,9 +195,7 @@ In this short session, you will be introduced to the concepts of Monte-Carlo and
  
 
 
-Week 5 - Lesson 5 - Policy Gradient Methods
 
-In previous lectures, you were introduced to DQN - an algorithm that falls under the first major branch of Reinforcement Learning, "Value Based Methods". In this lecture, we introduce you to "Policy Gradient methods" the second major branch of Reinforcement Learning where we learn to manipulate the object we care about the most - the policy - directly.
 
 Week 6 - Lesson 6 - Proximal Policy Optimization Algorithms
 
